@@ -1,0 +1,47 @@
+.show-panel {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: $main-color;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  .arrow-right {
+    display: none;
+  }
+}
+.show-panel:hover {
+  background: #ff3535;
+}
+
+.show-panel:focus {
+  outline: none;
+}
+
+.main-block {
+  flex: auto;
+}
+
+.previous-7days {
+  min-width: 200px;
+  display: none;
+  flex-shrink: 0;
+  padding: 20px;
+  color: #fff;
+  background: $main-color;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.side-panel-open {
+  .previous-7days {
+    display: initial;
+  }
+  .arrow-left {
+    display: none;
+  }
+  .arrow-right {
+    display: initial;
+  }
+}

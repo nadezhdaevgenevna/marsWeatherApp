@@ -1,0 +1,21 @@
+@import "libs/bootstrap-reboot.min";
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+@import "base/variables";
+
+* {
+  font-family: "Space Mono", monospace;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+body {
+  background: url("../img/mars.png") no-repeat 50% / cover;
+}
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+@import "blocks/button";
