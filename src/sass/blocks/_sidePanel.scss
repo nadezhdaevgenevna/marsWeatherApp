@@ -1,0 +1,38 @@
+aside {
+  display: flex;
+  max-width: 50%;
+}
+
+.previous-days {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  flex-shrink: 0;
+  color: #fff;
+  background: rgba($main-color, $alpha: 0.5);
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+
+.side-panel-open {
+  .previous-days {
+    display: initial;
+  }
+  .arrow-left {
+    display: none;
+  }
+  .arrow-right {
+    display: initial;
+  }
+}
+
+.wrapper-block {
+  max-width: 100%;
+  margin: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  font-size: 22px;
+}

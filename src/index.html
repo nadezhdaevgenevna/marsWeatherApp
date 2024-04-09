@@ -5,52 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mars Weather App</title>
     <link rel="stylesheet" href="css/style.min.css" />
-
     <script src="js/main.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
       <main class="main-block">
-        <h1 class="title">Latest Weather at Elysium Planitia</h1>
-        <p class="subtitle">
+        <h1 class="main-block__title">Latest Weather at Elysium Planitia</h1>
+        <p class="main-block__subtitle">
           InSight has suspended daily temperature measurements. Get the latest
           Mars weather from the Curiosity Rover.
         </p>
         <div class="date">
-          <h2 class="date__title">Sol 377</h2>
-          <div class="date__day">September 30</div>
+          <h2 class="date__title">Sol 4144</h2>
+          <div class="date__day">April 3, 2024</div>
         </div>
         <div class="temperature">
           <h2 class="temperature__title">temperature</h2>
-          <div class="degrees">High: -20C</div>
-          <div class="degrees__low">Low: -98C</div>
+          <div class="temperature__high">High: -20C</div>
+          <div class="temperature__low">Low: -98C</div>
         </div>
         <div class="wind">
           <h2 class="wind__title">Wind</h2>
-          <div class="speed">75 kph</div>
+          <div class="wind__speed">75 kph</div>
         </div>
-
         <div class="units">
           <span>°C</span>
           <span>°F</span>
         </div>
       </main>
-
-      <button class="show-panel" type="button">
-        <span class="arrow-left">
-          <img
-            src="icons/keyboard_double_arrow_left_FILL0_wght400_GRAD0_opsz24.svg"
-            alt=""
-          />
-        </span>
-        <span class="arrow-right">
-          <img
-            src="icons/keyboard_double_arrow_right_FILL0_wght400_GRAD0_opsz24.svg"
-            alt=""
-          />
-        </span>
-      </button>
-      <div class="previous-7days">content</div>
+      <aside>
+        <button class="show-panel" type="button">
+          <span class="arrow-left">
+            <img
+              src="icons/keyboard_double_arrow_left_FILL0_wght400_GRAD0_opsz24.svg"
+              alt="arrow left"
+            />
+          </span>
+          <span class="arrow-right">
+            <img
+              src="icons/keyboard_double_arrow_right_FILL0_wght400_GRAD0_opsz24.svg"
+              alt="arrow right"
+            />
+          </span>
+        </button>
+        <div class="previous-days">
+          <div class="wrapper-block">
+            <div class="block">
+              <h2>Sol 4142</h2>
+              <p>March 31</p>
+              <div class="line"></div>
+              <p class="degrees">High: -20C</p>
+              <p class="degrees__low">Low: -98C</p>
+            </div>
+            <div class="block">
+              <h2>Sol 4142</h2>
+              <p>March 31</p>
+              <div class="line"></div>
+              <p class="degrees">High: -20C</p>
+              <p class="degrees__low">Low: -98C</p>
+            </div>
+            <div class="block">
+              <h2>Sol 4142</h2>
+              <p>March 31</p>
+              <div class="line"></div>
+              <p class="degrees">High: -20C</p>
+              <p class="degrees__low">Low: -98C</p>
+            </div>
+            <div class="block">
+              <h2>Sol 4142</h2>
+              <p>March 31</p>
+              <div class="line"></div>
+              <p class="degrees">High: -20C</p>
+              <p class="degrees__low">Low: -98C</p>
+            </div>
+            <div class="block">
+              <h2>Sol 4142</h2>
+              <p>March 31</p>
+              <div class="line"></div>
+              <p class="degrees">High: -20C</p>
+              <p class="degrees__low">Low: -98C</p>
+            </div>
+            <div class="block">
+              <h2>Sol 4142</h2>
+              <p>March 31</p>
+              <div class="line"></div>
+              <div class="degrees">High: -20C</div>
+              <div class="degrees__low">Low: -98C</div>
+            </div>
+            <div class="block">
+              <h2>Sol 4142</h2>
+              <p>March 31</p>
+              <div class="line"></div>
+              <p class="degrees">High: -20C</p>
+              <p class="degrees__low">Low: -98C</p>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
   </body>
 </html>

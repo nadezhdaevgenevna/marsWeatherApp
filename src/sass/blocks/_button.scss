@@ -23,25 +23,3 @@
 .main-block {
   flex: auto;
 }
-
-.previous-7days {
-  min-width: 200px;
-  display: none;
-  flex-shrink: 0;
-  padding: 20px;
-  color: #fff;
-  background: $main-color;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-}
-
-.side-panel-open {
-  .previous-7days {
-    display: initial;
-  }
-  .arrow-left {
-    display: none;
-  }
-  .arrow-right {
-    display: initial;
-  }
-}
