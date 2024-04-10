@@ -1,0 +1,29 @@
+.toggle {
+  background-color: rgba(#ff6835, 0.5);
+  width: 50px;
+  height: 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: #ffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    margin: 2.5px;
+    transition: 0.2s;
+  }
+}
+input:checked + .toggle {
+  background-color: $main-color;
+}
+
+input:checked + .toggle::before {
+  transform: translateX(25px);
+}
+
+input {
+  display: none;
+}

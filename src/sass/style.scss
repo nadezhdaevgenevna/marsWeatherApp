@@ -14,9 +14,12 @@ body {
   background: url("../img/mars.png") no-repeat 50% / cover;
 }
 .wrapper {
-  display: flex;
+  background: rgba(#000000, 0.3);
+
   height: 100vh;
 }
 
 @import "blocks/button";
 @import "blocks/sidePanel";
+@import "blocks/weather";
+@import "blocks/toggleSwitch";

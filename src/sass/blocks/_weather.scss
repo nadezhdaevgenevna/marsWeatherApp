@@ -1,0 +1,70 @@
+.main-block {
+  position: relative;
+  padding: 170px 150px;
+  margin: 0 auto;
+  min-height: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+  &__title {
+    grid-column: 1/-2;
+    color: $main-color;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 0px;
+  }
+  &__subtitle {
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+  .date {
+    grid-column: 1/2;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 30px;
+    padding: 10px;
+  }
+  .temperature {
+    grid-column: 2/3;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 30px;
+    padding: 10px;
+  }
+  .wind {
+    grid-column: 1;
+    grid-row: 5;
+    justify-self: center;
+    align-self: center;
+    padding: 15px;
+  }
+  .units {
+    grid-column: 3;
+    grid-row: 3/3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .cel {
+      font-size: 1.5em;
+      grid-column-end: 1;
+      justify-self: center;
+      align-self: center;
+    }
+    .toggle {
+      margin: 0;
+      justify-self: center;
+      align-self: center;
+    }
+    .fahr {
+      font-size: 1.5em;
+      grid-column: 2;
+      align-self: center;
+    }
+  }
+}
+.title-reused {
+  font-size: 2.5em;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba($main-color, 0.6);
+}
