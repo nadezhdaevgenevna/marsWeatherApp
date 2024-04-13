@@ -1,13 +1,14 @@
 .show-panel {
   position: relative;
-  //   color: #ff6835;
-  background-color: rgba(#ff6835, 0.3);
-  display: inline-block;
+  border-radius: 30px;
+  background-color: #ff6835;
+  width: 100%;
   padding: 15px 30px;
+  align-items: center;
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1em;
   letter-spacing: 2px;
   transition: 0.2s;
   outline: none;
@@ -69,14 +70,6 @@
   top: 100%;
   transition: 1s;
   transition-delay: 0.25s;
-}
-
-.show-panel:hover {
-  background-color: $main-color;
-  transition-delay: 1s;
-  box-shadow: 0 0 10px $main-color;
-  border-radius: 3px;
-  cursor: pointer;
 }
 
 .show-panel:focus {
