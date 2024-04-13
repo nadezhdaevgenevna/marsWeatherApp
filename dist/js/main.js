@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const lastDateElement = document.querySelector("[data-last-date]");
   const lastTempHighElement = document.querySelector("[data-last-temp-high]");
   const lastTempLowElement = document.querySelector("[data-last-temp-low]");
-
+  const toggle = document.querySelector(".toggle");
   const previousSolsTemplate = document.querySelector(
     "[data-previous-sols-template]"
   );
@@ -56,9 +56,11 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   function updateUnits() {
+    const templateUnits = document.querySelectorAll(".booba");
     const units = document.querySelectorAll("[data-temp-unit]");
     metricChange.addEventListener("change", () => {
       if (metricChange.checked) {
+        templateUnits.forEach((item) => (item.innerHTML = "°F"));
         units.forEach((i) => (i.innerText = "°F"));
       } else {
         units.forEach((i) => (i.innerText = "°C"));
@@ -88,11 +90,21 @@ window.addEventListener("DOMContentLoaded", () => {
         displayTemperature(solData.maxTemp);
       solContainer.querySelector("[data-temp-low]").innerHTML =
         displayTemperature(solData.minTemp);
+      updateUnits();
+
+      if (fahr()) {
+        solContainer.querySelectorAll("[data-temp-unit]").forEach((it) => {
+          it.innerText = "°F";
+        });
+      } else {
+        solContainer.querySelectorAll("[data-temp-unit]").forEach((it) => {
+          it.innerText = "°C";
+        });
+      }
 
       previousSolsContainer.appendChild(solContainer);
     });
     previousSolsContainer.lastChild.classList.add("block-last");
-    updateUnits();
   }
 
   function displayDate(date) {
