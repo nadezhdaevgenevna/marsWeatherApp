@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const lastDateElement = document.querySelector("[data-last-date]");
   const lastTempHighElement = document.querySelector("[data-last-temp-high]");
   const lastTempLowElement = document.querySelector("[data-last-temp-low]");
-  const toggle = document.querySelector(".toggle");
+  const windSpeedElement = document.querySelector("[data-wind-speed]");
   const previousSolsTemplate = document.querySelector(
     "[data-previous-sols-template]"
   );
@@ -56,14 +56,13 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   function updateUnits() {
-    const templateUnits = document.querySelectorAll(".booba");
-    const units = document.querySelectorAll("[data-temp-unit]");
+    const templateUnits = document.querySelectorAll("[data-temp-unit]");
     metricChange.addEventListener("change", () => {
       if (metricChange.checked) {
         templateUnits.forEach((item) => (item.innerHTML = "°F"));
         units.forEach((i) => (i.innerText = "°F"));
       } else {
-        units.forEach((i) => (i.innerText = "°C"));
+        templateUnits.forEach((i) => (i.innerText = "°C"));
       }
     });
   }
@@ -73,6 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
     lastDateElement.innerHTML = displayDate(selectedSol.date);
     lastTempHighElement.innerHTML = displayTemperature(selectedSol.maxTemp);
     lastTempLowElement.innerHTML = displayTemperature(selectedSol.minTemp);
+    windSpeedElement.innerHTML = displaySpeed(selectedSol.windSpeed);
   }
 
   function displayPreviousSols(sols) {
@@ -91,6 +91,9 @@ window.addEventListener("DOMContentLoaded", () => {
       solContainer.querySelector("[data-temp-low]").innerHTML =
         displayTemperature(solData.minTemp);
       updateUnits();
+      solContainer.querySelector("[data-wind-speed]").innerHTML = displaySpeed(
+        solData.windSpeed
+      );
 
       if (fahr()) {
         solContainer.querySelectorAll("[data-temp-unit]").forEach((it) => {
@@ -107,6 +110,31 @@ window.addEventListener("DOMContentLoaded", () => {
     previousSolsContainer.lastChild.classList.add("block-last");
   }
 
+  function getWeather() {
+    return fetch(API_URL)
+      .then((res) => res.json())
+      .then((data) => {
+        const { sol_keys, validity_checks, ...solData } = data;
+        return Object.entries(solData).map(([sol, data]) => {
+          return {
+            sol: sol,
+            maxTemp: data.AT.mx,
+            minTemp: data.AT.mn,
+            windSpeed: data.HWS.av,
+            date: new Date(data.First_UTC),
+          };
+        });
+      });
+  }
+
+  function fahr() {
+    return metricChange.checked;
+  }
+
+  function displaySpeed(speed) {
+    return Math.round(speed);
+  }
+
   function displayDate(date) {
     return date.toLocaleDateString(undefined, {
       day: "numeric",
@@ -120,26 +148,5 @@ window.addEventListener("DOMContentLoaded", () => {
       returnTemp = 1.8 * temperature + 32;
     }
     return Math.round(returnTemp);
-  }
-
-  function getWeather() {
-    return fetch(API_URL)
-      .then((res) => res.json())
-      .then((data) => {
-        const { sol_keys, validity_checks, ...solData } = data;
-        return Object.entries(solData).map(([sol, data]) => {
-          return {
-            sol: sol,
-            maxTemp: data.AT.mx,
-            minTemp: data.AT.mn,
-            windSpeed: data.HWS.av,
-            season: data.Season,
-            date: new Date(data.First_UTC),
-          };
-        });
-      });
-  }
-  function fahr() {
-    return metricChange.checked;
   }
 });

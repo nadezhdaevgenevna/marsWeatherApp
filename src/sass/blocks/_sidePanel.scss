@@ -20,6 +20,7 @@
   transform: translateX(100%);
   position: absolute;
   height: 100vh;
+  overflow-y: auto;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -29,6 +30,13 @@
   right: 0;
   padding: 15px 15px;
   .block {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 280px;
+    min-height: 175px;
+    overflow-x: hidden;
+    background: url(../../img/1.svg) no-repeat;
     text-align: center;
     justify-self: center;
     &__line {
@@ -36,16 +44,41 @@
       margin: 0 5px;
     }
     &__title {
-      font-size: 1em;
+      font-size: 1.5em;
+      margin-top: 40px;
+      margin-left: 20px;
+      line-height: 28px;
     }
     &__date {
-      font-size: 0.7em;
+      font-size: 0.9em;
+      margin-top: 20px;
+      margin-left: 40px;
     }
-    &__high {
-      font-size: 0.8em;
-    }
+    &__high,
     &__low {
       font-size: 0.8em;
+      margin-left: 20px;
+      text-align-last: left;
+      width: 100%;
+      line-height: 15px;
+      margin-bottom: 5px;
+      height: 20px;
+    }
+    &__wind {
+      img {
+        width: 35px;
+      }
+      position: absolute;
+      right: 50px;
+      bottom: 40px;
+    }
+    .weather {
+      position: absolute;
+      right: 70px;
+      top: 40px;
+      width: 40px;
+      height: 40px;
+      z-index: 2;
     }
   }
   .block-last {

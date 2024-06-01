@@ -10,54 +10,58 @@
   <body>
     <div class="wrapper">
       <main class="main-block">
-        <h1 class="main-block__title">Latest Weather at Elysium Planitia</h1>
-        <p class="main-block__subtitle">
-          InSight has suspended daily temperature measurements. Get the latest
-          Mars weather from the Curiosity Rover. Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Aliquam nobis porro molestiae quod odit
-          explicabo consectetur vero harum repellendus dolorem, illo.
-        </p>
-
-        <div class="main__data">
-          <div class="date">
-            <h2 class="date__title title-reused">
-              Sol <span data-last-sol></span>
-            </h2>
-            <div data-last-date class="date__day">
-              April 3, <br />
-              2024
-            </div>
-          </div>
-          <div class="temperature">
-            <h2 class="temperature__title title-reused">Temperature</h2>
-            <div class="temperature__high">
-              High:
-              <span data-last-temp-high></span>
-              <span data-temp-unit>°C</span>
-            </div>
-            <div class="temperature__low">
-              Low:
-              <span data-last-temp-low></span>
-              <span data-temp-unit>°C</span>
-            </div>
-          </div>
+        <div class="main-container">
+          <h1 class="main-block__title">Latest Weather at Elysium Planitia</h1>
+          <p class="main-block__subtitle">
+            InSight has suspended daily temperature measurements. Get the latest
+            Mars weather from the Curiosity Rover.
+          </p>
         </div>
 
-        <div class="units">
-          <span class="cel">°C</span>
-          <input type="checkbox" name="toggle" id="check" />
-          <label for="check" class="toggle"></label>
-          <span class="fahr">°F</span>
-        </div>
-
-        <div class="wind">
-          <button class="show-panel" type="button">
-            <span class="show-panel__line show-panel__line--top"></span>
-            <span class="show-panel__line show-panel__line--right"></span>
-            <span class="show-panel__line show-panel__line--bottom"></span>
-            <span class="show-panel__line show-panel__line--left"></span>
-            Show previous days
-          </button>
+        <div class="container">
+          <div class="main__data">
+            <div class="date">
+              <h2 class="date__title title-reused">
+                Sol <span data-last-sol></span>
+              </h2>
+              <div data-last-date class="date__day">
+                April 3, <br />
+                2024
+              </div>
+            </div>
+            <div class="temperature">
+              <h2 class="temperature__title title-reused">Temperature</h2>
+              <div class="temperature__high">
+                High:
+                <span data-last-temp-high></span>
+                <span data-temp-unit>°C</span>
+              </div>
+              <div class="temperature__low">
+                Low:
+                <span data-last-temp-low></span>
+                <span data-temp-unit>°C</span>
+              </div>
+              <div class="wind__speed">
+                <img src="img/wind.svg" alt="" />
+                <span data-wind-speed></span> Kph
+              </div>
+            </div>
+          </div>
+          <div class="units">
+            <span class="cel">°C</span>
+            <input type="checkbox" name="toggle" id="check" />
+            <label for="check" class="toggle"></label>
+            <span class="fahr">°F</span>
+          </div>
+          <div class="wind">
+            <button class="show-panel" type="button">
+              <span class="show-panel__line show-panel__line--top"></span>
+              <span class="show-panel__line show-panel__line--right"></span>
+              <span class="show-panel__line show-panel__line--bottom"></span>
+              <span class="show-panel__line show-panel__line--left"></span>
+              Show previous days
+            </button>
+          </div>
         </div>
       </main>
 
@@ -82,6 +86,13 @@
                 <span data-temp-low></span>
                 <span data-temp-unit>°C</span>
               </p>
+              <div class="block__wind">
+                <img src="img/wind.svg" alt="wind icon" />
+                <span data-wind-speed></span> Kph
+              </div>
+              <div class="weather">
+                <img data-weather src="img/weather.svg" alt="autumn" />
+              </div>
             </div>
           </template>
         </div>

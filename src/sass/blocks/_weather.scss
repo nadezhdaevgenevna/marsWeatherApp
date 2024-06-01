@@ -1,55 +1,67 @@
 .main-block {
   height: 100dvh;
-  display: grid;
-  position: relative;
-  padding: 1em 1em;
+  display: flex;
+  flex-direction: column;
+  .main-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 50px 0 20px;
+    position: relative;
+  }
   &__title {
-    line-height: 1em;
-    text-align: center;
     color: $main-color;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-    font-size: 1.2em;
-    font-weight: 700;
-    letter-spacing: 0px;
+    text-align-last: left;
   }
   &__subtitle {
-    line-height: 1.2em;
-    text-align: center;
-    font-size: 0.8em;
+    max-width: 500px;
+    text-align: left;
+    margin-top: 30px;
   }
-  .date {
-    font-size: 0.8em;
-    grid-column: 1;
-    text-align: center;
-    border-radius: 30px;
-    padding: 10px;
-  }
-  .temperature {
-    font-size: 0.8em;
-    text-align: center;
-    border-radius: 30px;
-    padding: 10px;
-  }
-  .units {
-    justify-self: center;
-    align-self: center;
-    .cel {
-      font-size: 1.5em;
+  .container {
+    background: rgba(#000000, 0.6);
+    border-radius: 20px;
+    padding: 20px 10px;
+    max-width: 500px;
+    margin: 0 auto;
+    .main__data {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 20px;
+      border-bottom: 10px solid $main-color;
+
+      .date {
+        text-align: center;
+      }
+      .temperature {
+        text-align: right;
+      }
+      .wind__speed {
+        img {
+          width: 35px;
+          margin-right: 15px;
+        }
+      }
+      .title-reused {
+        font-size: 32px;
+        text-shadow: 0 0 10px rgba($main-color, 0.6);
+      }
     }
-    .toggle {
-      margin: 0;
-      justify-self: center;
-      align-self: center;
-    }
-    .fahr {
-      font-size: 1.5em;
-      grid-column-start: 2;
-      align-self: center;
+    .units {
+      display: flex;
+      margin-top: 15px;
+      align-items: center;
+      justify-content: end;
+      .cel {
+        font-size: 1em;
+      }
+      .toggle {
+        margin: 0 5px;
+        justify-self: center;
+        align-self: center;
+      }
+      .fahr {
+        font-size: 1em;
+      }
     }
   }
-}
-.title-reused {
-  font-size: 1.7em;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba($main-color, 0.6);
 }

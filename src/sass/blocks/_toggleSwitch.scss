@@ -1,7 +1,7 @@
 .toggle {
   background-color: rgba(#ff6835, 0.5);
-  width: 50px;
-  height: 25px;
+  width: 40px;
+  height: 20px;
   border-radius: 50px;
   cursor: pointer;
   position: relative;
@@ -9,8 +9,8 @@
     position: absolute;
     content: "";
     background-color: #ffff;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 100%;
     margin: 2.5px;
     transition: 0.2s;
@@ -21,7 +21,7 @@ input:checked + .toggle {
 }
 
 input:checked + .toggle::before {
-  transform: translateX(25px);
+  transform: translateX(20px);
 }
 
 input {
